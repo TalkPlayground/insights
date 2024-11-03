@@ -13,8 +13,8 @@ const Logo: React.FC = () => {
   };
 
   return (
-    <div onClick={handleClick}>
-      <img src="/header_logo.png" alt="Logo" className="logo" />
+    <div onClick={handleClick} className="logo-container">
+      <img src="/feelpath-logo.png" alt="Logo" className="logo-image" />
     </div>
   );
 };

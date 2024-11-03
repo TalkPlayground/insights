@@ -9,19 +9,25 @@ import DashboardLayout from "./layouts/dashboard-layout";
 
 // Import the components
 import IndexPage from "./routes";
-import PricingPage from "./routes/pricing";
+import AboutPage from "./routes/about";
 import SignInPage from "./routes/sign-in";
 import SignUpPage from "./routes/sign-up";
+import PricingPage from "./routes/pricing";
+import PatientsPage from "./routes/patients";
+import TherapistsPage from "./routes/therapists";
 import DashboardPage from "./routes/dashboard";
-import WheelsPage from "./routes/dashboard.wheels";
-import SelfTalkPage from "./routes/dashboard.self-talk";
+import WheelsPage from "./routes/dashboard/dashboard.wheels";
+import SelfTalkPage from "./routes/dashboard/dashboard.self-talk";
 
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
       { path: "/", element: <IndexPage /> },
+      { path: "/about", element: <AboutPage /> },
       { path: "/pricing", element: <PricingPage /> },
+      { path: "/patients", element: <PatientsPage /> },
+      { path: "/therapists", element: <TherapistsPage /> },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       {

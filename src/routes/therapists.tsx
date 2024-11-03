@@ -1,7 +1,9 @@
-export default function PricingPage() {
+export default function TherapistsPage() {
   return (
     <>
-      <h1 className="hero-text">Pricing</h1>
+      <h1 className="hero-text">
+        <b>Easier</b> for therapists.
+      </h1>
       <p className="paragraph-text">
         Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia nec
         suspendisse consequat enim montes bibendum. Netus rhoncus hac neque

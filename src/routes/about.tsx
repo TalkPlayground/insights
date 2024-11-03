@@ -1,7 +1,7 @@
-export default function PricingPage() {
+export default function AboutPage() {
   return (
     <>
-      <h1 className="hero-text">Pricing</h1>
+      <h1 className="hero-text">About</h1>
       <p className="paragraph-text">
         Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia nec
         suspendisse consequat enim montes bibendum. Netus rhoncus hac neque

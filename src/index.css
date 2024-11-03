@@ -1,62 +1,250 @@
-.logo {
-  width: 500px;
-}
-
-.sign-in-button {
-  min-width: 44px;
-}
-
-/* Add media query for screens smaller than 450px */
-@media screen and (max-width: 450px) {
-  .logo {
-    width: 240px; /* or any other size that works better for mobile */
-  }
-  .header-container {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
-.chart-container {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Ensure full height */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  max-height: 400px;
-}
-
-.nav-content {
-  display: flex; /* Use flexbox to align items inline */
-  align-items: center; /* Vertically center the items */
-  gap: 10px; /* Optional: Add some space between items */
-  justify-content: space-between;
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-right: 40px;
 }
 
 main {
   display: flex;
+  flex-direction: row;
+  height: calc(100vh - 130px); /* Adjust for the header */
   justify-content: center;
   align-items: center;
-  min-height: calc(
-    100vh - 60px
-  ); /* Subtract header height (including padding) */
+  font-family: "Libre Franklin", sans-serif;
 }
 
-a {
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  flex-wrap: wrap; /* Allow wrapping to prevent overflow */
+  padding: 0 30px;
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-menu-container {
+  display: none;
+  margin-left: 50px;
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent the hamburger menu from shrinking */
+}
+
+.btn-hamburger-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  max-height: 200px;
+  padding-top: 20px;
+  padding-left: 15px;
+  margin-right: 80px;
+  width: 400px; /* Fixed width */
+  height: auto; /* Maintain aspect ratio */
+  flex-shrink: 0; /* Prevent the logo from shrinking by default */
+}
+
+.hamburger-img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.nav-items {
+  display: flex;
+  flex-wrap: wrap; /* Allow nav items to wrap */
+}
+
+.nav-items ul {
+  display: flex;
+  flex-wrap: wrap; /* Allow nav items to wrap */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  list-style-type: none; /* Remove bullet points */
+}
+
+.nav-items li {
+  margin-right: clamp(1vw, 4vw, 5vw); /* Responsive margin */
+}
+
+.nav-items a {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+.sign-in-link {
+  background-color: #f9f9f9; /* Light gray background */
+  border: 1px solid #d8d8d8; /* Add a border with the specified color */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for button-like appearance */
+  text-decoration: none; /* Remove underline */
+  color: black; /* Text color */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  font-weight: 500; /* Set font weight to 500 */
+  white-space: nowrap; /* Prevent text wrapping */
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.sign-in-link:hover {
+  background-color: #eaeaea; /* Darker gray on hover */
+}
+
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%; /* Adjust based on your desired layout */
+  padding: 100px;
+  align-items: center;
+}
+
+.hero-text {
+  font-weight: 300; /* Font weight */
+  color: #165e76; /* Text color */
+  margin-bottom: 20px; /* Space between text and button */
+  font-family: "Libre Franklin", sans-serif;
+  font-size: calc(2vw + 1em); /* Example for responsiveness */
+  white-space: nowrap;
+}
+
+.right-column {
+  width: 60vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  max-height: calc(100vh - 130px); /* Ensure it does not cover the nav */
+}
+
+.design-image {
+  width: 100%;
+  height: auto; /* Ensure it scales properly */
+  object-fit: cover; /* Makes sure it fills its container */
+}
+
+.cl-formButtonPrimary {
+  background: #165e76;
+  color: white;
+}
+
+.paragraph-text {
+  font-weight: 100;
+  font-size: 1em;
+}
+
+.sign-up-footer {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.sign-up-footer span {
+  font-weight: 400;
+  color: #a4a4a4;
+  margin-right: 10px;
+}
+
+.sign-up-link {
   text-decoration: none;
   color: inherit;
-  display: inline;
-  font-size: 22px;
-  border: 1px solid rgb(214, 214, 214);
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 5px;
+  font-weight: 500;
+  color: #165e76;
 }
 
-a:hover {
-  background-color: rgb(241, 241, 241);
+@media (max-width: 1140px) {
+  .nav-items {
+    display: none;
+  }
+  .hamburger-menu-container {
+    display: inline;
+  }
+}
+
+.cl-footer {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .nav-items {
+    display: none;
+  }
+  .hamburger-menu-container {
+    display: inline;
+  }
+  .nav-sign-in-link {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .hamburger-menu-container {
+    display: inline;
+  }
+  .logo-image {
+    margin-right: 30px;
+  }
+}
+
+@media (max-width: 672px) {
+  .logo-image {
+    flex-shrink: 1; /* Allow the logo to shrink when window width is less than 550px */
+    width: clamp(200px, 50vw, 400px); /* Dynamic width with min and max */
+  }
+  .hamburger-menu-container {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-image {
+    width: clamp(100px, 50vw, 400px); /* Dynamic width with min and max */
+    margin-right: 10px;
+  }
+  .hamburger-img {
+    max-width: 25px;
+    max-height: 25px;
+  }
+}
+
+@media (max-width: 850px) {
+  .main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .right-column {
+    width: clamp(30vw, 60vw, 40vh);
+  }
+
+  .left-column {
+    width: 85%;
+    padding: 0 100px 0px 100px;
+  }
+
+  .hero-text {
+    font-size: clamp(3vw, 6vw, 4vh);
+    margin-bottom: 20px;
+  }
+  .sign-in-link {
+    margin: 40px;
+  }
 }
