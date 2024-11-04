@@ -12,9 +12,6 @@ export default function DashboardPage() {
         <li>
           <Link to="/dashboard/self-talk">Self-Talk</Link>
         </li>
-        <li>
-          <Link to="/">Return to index</Link>
-        </li>
       </ul>
     </>
   );

@@ -1,16 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
-import { ClerkProvider } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
+
 import Logo from "../components/Logo";
 import Hamburger from "../components/Hamburger";
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-
-if (!PUBLISHABLE_KEY) {
-  throw new Error("Missing Publishable Key");
-}
 
 export default function RootLayout() {
   return (
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <>
       <header className="header-container">
         <Logo />
         <nav className="nav-bar">
@@ -31,9 +27,14 @@ export default function RootLayout() {
             </ul>
           </div>
           <div className="btn-hamburger-container">
-            <Link to="/sign-in" className="sign-in-link nav-sign-in-link">
-              Sign Up / Sign In
-            </Link>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <Link to="/sign-in" className="sign-in-link nav-sign-in-link">
+                Sign Up / Sign In
+              </Link>
+            </SignedOut>
             <Hamburger />
           </div>
         </nav>
@@ -48,6 +49,6 @@ export default function RootLayout() {
           </div>
         </div>
       </main>
-    </ClerkProvider>
+    </>
   );
 }
